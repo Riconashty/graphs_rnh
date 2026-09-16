@@ -1,5 +1,5 @@
 ```
-URL for this GitHub repository: 
+URL for this GitHub repository: https://github.com/Riconashty/graphs_rnh.git
 ```
 The structure for this repository is the following: 
 ```
@@ -8,9 +8,9 @@ __graphs_rnh
    |__ __init__.py
    |__ heapq.py
    |__ sp.py
-__test.py
-__README.md
-__pyproject.toml
+pyproject.toml
+README.md
+test.py
 ```
 
 # The Shortest Path Problem
