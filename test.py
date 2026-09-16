@@ -25,3 +25,5 @@ if __name__ == '__main__':
     print(dist)
     for d in path: 
         print(f'spf to {d}: {path[d]}')
+
+    print(f'Total nodes in the graph: {sp.total_nodes(graph)}')
