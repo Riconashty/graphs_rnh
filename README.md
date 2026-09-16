@@ -5,6 +5,8 @@ shortest path algorithm. Given a weighted directed graph and a source
 vertex, it returns the lowest cost to reach every other vertex, along
 with the actual path taken.
 
+GitHub URL: https://github.com/Riconashty/graphs_rnh
+
 ## Installation
 
 Install directly from GitHub:
