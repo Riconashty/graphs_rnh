@@ -3,4 +3,4 @@ __pycache__/
 .venv/
 build/
 dist/
-EOF
+EOF.DS_Store
