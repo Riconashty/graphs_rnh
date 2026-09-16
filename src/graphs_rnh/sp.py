@@ -18,5 +18,5 @@ def dijkstra(graph, source):
 
     return dist, path
 
-def num_points(graph):
+def total_nodes(graph):
     return len(graph)

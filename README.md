@@ -1,17 +1,75 @@
+# graphs_rnh
+
+A small Python library of graph algorithms, built around Dijkstra's
+shortest path algorithm. Given a weighted directed graph and a source
+vertex, it returns the lowest cost to reach every other vertex, along
+with the actual path taken.
+
+## Installation
+
+Install directly from GitHub:
+
+```bash
+pip install git+https://github.com/Riconashty/graphs_rnh.git
 ```
-URL for this GitHub repository: https://github.com/Riconashty/graphs_rnh.git
+
+Or clone and install locally:
+
+```bash
+git clone https://github.com/Riconashty/graphs_rnh.git
+cd graphs_rnh
+pip install .
 ```
-The structure for this repository is the following: 
+
+Requires Python 3.9 or later. No third-party dependencies.
+
+## Usage
+
+A graph is a dictionary of dictionaries: `graph[u][v]` is the weight of
+the edge from `u` to `v`.
+
+```python
+from graphs_rnh import sp
+
+graph = {
+    0: {1: 4, 2: 1},
+    1: {3: 1},
+    2: {1: 2, 3: 5},
+    3: {},
+}
+
+dist, path = sp.dijkstra(graph, 0)
+
+print(dist)   # {0: 0, 1: 3, 2: 1, 3: 4}
+print(path)   # {0: [], 1: [0, 2], 2: [0], 3: [0, 2, 1]}
 ```
-src
-__graphs_rnh
-   |__ __init__.py
-   |__ heapq.py
-   |__ sp.py
-pyproject.toml
-README.md
-test.py
+
+`dijkstra(graph, source)` returns two dictionaries:
+
+- `dist` — the total cost to reach each vertex from `source`
+- `path` — the vertices visited on the way to each one, not including
+  the destination itself
+
+So reaching vertex 3 costs 4, travelling `0 → 2 → 1 → 3`, which beats
+the direct `0 → 2 → 3` edge of weight 5.
+
+## Running the example graphs
+
+The `data/` folder holds sample graphs, one edge per line as
+`source destination weight`:
+
+```bash
+python test.py data/example1.txt
 ```
+
+## What's included
+
+- `sp.dijkstra(graph, source)` — shortest paths from a source vertex
+- `sp.total_nodes(graph)` - returns the total number of nodes in a given graph
+- `heapq` — a bundled min-heap implementation used by `dijkstra`
+
+
+
 
 # The Shortest Path Problem
 
