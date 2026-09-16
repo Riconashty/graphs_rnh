@@ -1,79 +1,16 @@
-# Overview 
-
-The goal of this assignment is to assess your understanding of how to package a software library, as discussed in class.
-
-More specifically, you are asked to package a Python library that implements Dijkstra's shortest path algorithm, along with other graph-related algorithms.
-
-# Instructions
-
-The name of your package must follow the format: **graphs_unique_id**, where "unique_id" should be replaced with a unique id. For example, I would name my package **graphs_tmota**. 
-
-The implementation of Dijkstra's algorithm has been provided, as the primary goal of this assignment is to give you practice in packaging code into a standardized format.
-
-You should create a public GitHub repository for your project to allow others to contribute in the future. The repository must include:
-
-1. A well-written README file.
-2. A protected main branch.
-3. A separate dev branch for development work.
-
-To receive credit for this assignment, update the README file and add the URL of your public GitHub repository below.
-
 ```
-URL for your GitHub repository: 
+URL for this GitHub repository: 
 ```
-
-The expected structure for the GitHub repository is the following: 
-
+The structure for this repository is the following: 
 ```
 src
-|__graphs_<unique_id>
+__graphs_rnh
    |__ __init__.py
    |__ heapq.py
    |__ sp.py
-|__test.py
-|__README.md
-|__pyproject.toml
-```
-
-Additionally, I should be able to install your Python package using pip and run the following code—replacing **unique_id** with your own unique id:
-
-```
-from graphs_tmota import sp
-import sys
-
-if __name__ == '__main__':
-    
-    if len(sys.argv) != 2:
-        print(f'Use: {sys.argv[0]} graph_file')
-        sys.exit(1)
-
-    graph = {}
-    with open(sys.argv[1], 'rt') as f:
-        for line in f:
-            line = line.strip()
-            s, d, w = line.split()
-            s = int(s)
-            d = int(d)
-            w = int(w)
-            if s not in graph:
-                graph[s] = {}
-            graph[s][d] = w
-    
-    s = 0
-    dist, path = sp.dijkstra(graph, s)
-    print(f'Shortest distances from {s}:')
-    print(dist)
-    for d in path: 
-        print(f'spf to {d}: {path[d]}')
-```
-
-# Rubric
-
-```
-+1 GitHub repository has main and dev branches, with the main branch protected
-+1 the GitHub repository has a README file that explains what is this library about 
-+3 the library can be installed using pip and it is usable 
-+1 (bonus) other graph-related algorithm is added to the library
+__test.py
+__README.md
+__pyproject.toml
 ```
 
 # The Shortest Path Problem
